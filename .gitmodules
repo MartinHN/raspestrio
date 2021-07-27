@@ -1,0 +1,6 @@
+[submodule "schedule"]
+	path = schedule
+	url = ./schedule
+[submodule "server"]
+	path = server
+	url = ./server
