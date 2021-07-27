@@ -4,3 +4,6 @@
 [submodule "server"]
 	path = server
 	url = https://github.com/MartinHN/scheduler-server.git
+[submodule "omxServer"]
+	path = omxServer
+	url = https://github.com/MartinHN/omxServer.git
