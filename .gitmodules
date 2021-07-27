@@ -1,6 +1,6 @@
 [submodule "schedule"]
 	path = schedule
-	url = ./schedule
+	url = https://github.com/MartinHN/scheduler.git
 [submodule "server"]
 	path = server
-	url = ./server
+	url = https://github.com/MartinHN/scheduler-server.git
