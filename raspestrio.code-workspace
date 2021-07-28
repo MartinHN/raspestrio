@@ -1,0 +1,23 @@
+{
+    "folders": [
+        {
+            "name": "Root",
+            "path": "."
+        },
+        {
+            // Source code
+            "name": "OmxServer",
+            "path": "omxServer"
+        },
+        {
+            // Docs and release notes
+            "name": "Schedule",
+            "path": "schedule"
+        },
+        {
+            // Yeoman extension generator
+            "name": "server",
+            "path": "server"
+        }
+    ]
+}
