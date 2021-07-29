@@ -7,3 +7,6 @@
 [submodule "omxServer"]
 	path = omxServer
 	url = https://github.com/MartinHN/omxServer.git
+[submodule "Vermuth"]
+	path = Vermuth
+	url = https://github.com/MartinHN/vermuth.git
