@@ -5,24 +5,19 @@
             "path": "."
         },
         {
-            // MediaPlayer
             "name": "OmxServer",
             "path": "omxServer"
         },
         {
-            // DMX
-            "name": "Vermuth",
-            "path": "Vermuth"
+            "name": "server",
+            "path": "server"
         },
         {
-            // Main Viewer
             "name": "Schedule",
             "path": "schedule"
         },
         {
-            // Main/Endpoint Server
-            "name": "server",
-            "path": "server"
+            "path": "../relaystrio"
         }
     ]
 }
