@@ -10,3 +10,6 @@
 [submodule "Vermuth"]
 	path = Vermuth
 	url = https://github.com/MartinHN/vermuth.git
+[submodule "androidjs"]
+	path = androidjs
+	url = git@github.com:MartinHN/androidjs.git
