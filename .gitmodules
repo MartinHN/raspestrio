@@ -15,5 +15,5 @@
 	url = git@github.com:MartinHN/androidjs.git
 [submodule "rpi-rtc"]
 	path = rpi-rtc
-	url = ./rpi-rtc/
+	url = https://github.com/MartinHN/rpi-rtc.git
 
