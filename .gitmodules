@@ -13,3 +13,7 @@
 [submodule "androidjs"]
 	path = androidjs
 	url = git@github.com:MartinHN/androidjs.git
+[submodule "rpi-rtc"]
+	path = rpi-rtc
+	url = ./rpi-rtc/
+
