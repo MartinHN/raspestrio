@@ -31,6 +31,8 @@ commitAll
 cd ../Vermuth
 commitAll
 
+cd ../schedule
+commitAll
 
 cd ../omxServer
 commitAll
