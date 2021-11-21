@@ -1,0 +1,2 @@
+cd Vermuth
+./run.sh
