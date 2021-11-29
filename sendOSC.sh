@@ -1,1 +1,1 @@
-oscsend osc.udp://$1:3004 $2 $3
+oscsend osc.udp://$1:3004 $2 $3 $4
