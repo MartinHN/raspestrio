@@ -21,8 +21,8 @@ function getCommitBuilt() {
 
 setRW rw
 
-for folder in server; do
-	cd server
+for folder in server schedule; do
+	cd $folder
 	H=$(git rev-parse HEAD)
 	if [ "$H" != "$(getCommitBuilt)" ]; then
 		echo "rebuilding $folder"
