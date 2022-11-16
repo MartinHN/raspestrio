@@ -1,4 +1,6 @@
-git pull --recurse-submodules
+if [ "$1" != "sf" ]; then
+	git pull --recurse-submodules
+fi
 #set -e -x
 if [ $(uname -m) == "armv7l" ]; then
 	isPi=1
