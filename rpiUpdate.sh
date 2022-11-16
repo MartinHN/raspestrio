@@ -21,11 +21,15 @@ function getCommitBuilt() {
 
 setRW rw
 
-for folder in server schedule; do
+for folder in server schedule Vermuth; do
 	cd $folder
 	H=$(git rev-parse HEAD)
 	if [ "$H" != "$(getCommitBuilt)" ]; then
 		echo "rebuilding $folder"
+		if [ -f install.sh ]; then
+			echo "installing $folder"
+			./install.sh
+		fi
 		./build.sh
 		if [ $? == 0 ]; then
 			echo $H >builtCommit
