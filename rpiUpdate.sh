@@ -1,7 +1,10 @@
-if [ "$1" != "sf" ]; then
-	git pull --recurse-submodules
-fi
 #set -e -x
+if [ "$1" != "sf" ]; then
+	skipFetch=0
+else
+	skipFetch=1
+fi
+
 if [ $(uname -m) == "armv7l" ]; then
 	isPi=1
 fi
@@ -22,6 +25,9 @@ function getCommitBuilt() {
 }
 
 setRW rw
+if [ "$skipFetch" == "0" ]; then
+	git pull --recurse-submodules
+fi
 
 for folder in server schedule Vermuth; do
 	cd $folder
