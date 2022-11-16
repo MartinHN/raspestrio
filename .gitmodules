@@ -1,19 +1,19 @@
 [submodule "schedule"]
 	path = schedule
-	url = https://github.com/MartinHN/scheduler.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/scheduler/.git
 [submodule "server"]
 	path = server
-	url = https://github.com/MartinHN/scheduler-server.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/scheduler-server/.git
 [submodule "omxServer"]
 	path = omxServer
-	url = https://github.com/MartinHN/omxServer.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/omxServer/.git
 [submodule "Vermuth"]
 	path = Vermuth
-	url = https://github.com/MartinHN/vermuth.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/Vermuth/.git
 [submodule "androidjs"]
 	path = androidjs
-	url = git@github.com:MartinHN/androidjs.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/androidjs/.git
 [submodule "rpi-rtc"]
 	path = rpi-rtc
-	url = https://github.com/MartinHN/rpi-rtc.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/rpi-rtc/.git
 
