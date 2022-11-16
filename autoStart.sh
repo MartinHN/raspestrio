@@ -1,8 +1,8 @@
 cd server
 if [ -f /boot/isServer ]; then
 	echo "starting as main server"
-	npm run run -- -c --srv
+	./autoStartServer.sh
 else
 	echo "starting client"
-	npm run run -- -c
+	./autoStart.sh
 fi
