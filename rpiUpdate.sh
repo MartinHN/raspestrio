@@ -46,7 +46,7 @@ for folder in server schedule Vermuth; do
 			echo "build failed for $folder"
 		fi
 	else
-		echo "$folder up to date"
+		echo "$folder has already built $H"
 	fi
 	cd ..
 done
