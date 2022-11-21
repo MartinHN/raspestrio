@@ -28,7 +28,7 @@ setRW rw
 if [ "$skipFetch" == "0" ]; then
 	git pull local --recurse-submodules=on-demand
 fi
-
+nvm use 16
 toBuild="server Vermuth"
 if [ -f /boot/isServer ]; then
 	toBuild+=" schedule"
