@@ -29,7 +29,11 @@ if [ "$skipFetch" == "0" ]; then
 	git pull local --recurse-submodules=on-demand
 fi
 
-for folder in server schedule Vermuth; do
+toBuild="server Vermuth"
+if [ -f /boot/isServer ]; then
+	toBuild+=" schedule"
+fi
+for folder in $toBuild; do
 	cd $folder
 	H=$(git rev-parse HEAD)
 	if [ "$H" != "$(getCommitBuilt)" ]; then
