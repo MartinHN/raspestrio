@@ -22,5 +22,14 @@
         {
             "path": "androidjs"
         }
-    ]
+    ],
+    "settings": {
+        "files.associations": {
+            "regex": "cpp"
+        },
+        "volar.format.initialIndent": {
+            "html": false
+        },
+        "html.format.enable": false
+    }
 }
