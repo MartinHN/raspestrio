@@ -19,4 +19,4 @@
 
 [submodule "piLora"]
 	path = piLora
-	url = git@github.com:MartinHN/piLora.git
+	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/momo/lora/.git
