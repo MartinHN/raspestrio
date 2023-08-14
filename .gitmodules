@@ -17,3 +17,6 @@
 	path = rpi-rtc
 	url = tinmarbook@tinmarbook.local:/Users/tinmarbook/Dev/rpi-rtc/.git
 
+[submodule "piLora"]
+	path = piLora
+	url = git@github.com:MartinHN/piLora.git
