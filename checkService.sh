@@ -1,7 +1,17 @@
-systemctl status --no-pager lumestrio.service
+#!/bin/bash
 
-systemctl status --no-pager vermuth.service
-systemctl status --no-pager omxserver.service
+function printService() {
+    echo "--------------"
+    echo "$1"
+    systemctl status --no-pager $1 | grep 'Active'
+    journalctl -u $1 -n30
+}
 
-systemctl status --no-pager lora.service
-systemctl status --no-pager e32.service
+printService lumestrio.service
+
+printService vermuth.service
+printService omxserver.service
+
+printService lora.service
+
+printService e32.service
