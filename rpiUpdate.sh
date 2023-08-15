@@ -1,18 +1,24 @@
 #set -e -x
 if [ "$1" == "sf" ]; then
+	echo "will skip fetch"
 	skipFetch=1
 else
 	skipFetch=0
 fi
 
 if [ "$1" == "sb" ]; then
+	echo "will skip build"
 	skipBuild=1
 else
 	skipBuild=0
 fi
 
 if [ $(uname -m) == "armv7l" ]; then
+
 	isPi=1
+	if [ $isPi ]; then
+		echo "isPi"
+	fi
 fi
 
 function setRW() {
