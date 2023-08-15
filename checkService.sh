@@ -1,7 +1,7 @@
-systemctl status lumestrio.service
+systemctl status --no-pager lumestrio.service
 
-systemctl status vermuth.service
-systemctl status omxserver.service
+systemctl status --no-pager vermuth.service
+systemctl status --no-pager omxserver.service
 
-systemctl status lora.service
-systemctl status e32.service
+systemctl status --no-pager lora.service
+systemctl status --no-pager e32.service
