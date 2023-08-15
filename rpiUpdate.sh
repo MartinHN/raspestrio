@@ -1,8 +1,14 @@
 #set -e -x
-if [ "$1" != "sf" ]; then
-	skipFetch=0
-else
+if [ "$1" == "sf" ]; then
 	skipFetch=1
+else
+	skipFetch=0
+fi
+
+if [ "$1" == "sb" ]; then
+	skipBuild=1
+else
+	skipBuild=0
 fi
 
 if [ $(uname -m) == "armv7l" ]; then
@@ -26,9 +32,15 @@ function getCommitBuilt() {
 
 setRW rw
 if [ "$skipFetch" == "0" ]; then
-	git reset --hard
-	git submodule foreach --recursive git reset --hard
+	if [ $isPi ]; then
+		git reset --hard
+		git submodule foreach --recursive git reset --hard
+	fi
 	git pull local --recurse-submodules=on-demand
+fi
+
+if [ "$skipBuild" == "1" ]; then
+	exit 0
 fi
 
 toBuild="server Vermuth"
