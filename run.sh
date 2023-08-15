@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 cd server
-npm run run &
+pnpm run run &
 cd ..
 
 cd omxServer

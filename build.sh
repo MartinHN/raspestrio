@@ -2,7 +2,7 @@
 set -e
 #pushd .
 #cd schedule
-#npm run build
+#pnpm run build
 #popd
 cd server
-npm run build
+pnpm run build

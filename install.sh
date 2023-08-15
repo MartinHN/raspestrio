@@ -2,11 +2,11 @@
 set -e
 pushd .
 cd schedule
-npm i
+pnpm i
 popd
 pushd .
 cd server
-npm i
+pnpm i
 popd
 cd omxServer
-npm i
+pnpm i
