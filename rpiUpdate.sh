@@ -26,6 +26,8 @@ function getCommitBuilt() {
 
 setRW rw
 if [ "$skipFetch" == "0" ]; then
+	git reset --hard
+	git submodule foreach --recursive git reset --hard
 	git pull local --recurse-submodules=on-demand
 fi
 
