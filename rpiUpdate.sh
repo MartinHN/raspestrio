@@ -14,7 +14,6 @@ else
 fi
 
 if [ $(uname -m) == "armv7l" ]; then
-
 	isPi=1
 	if [ $isPi ]; then
 		echo "isPi"
