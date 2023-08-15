@@ -4,7 +4,7 @@ function printService() {
     echo "--------------"
     echo "$1"
     systemctl status --no-pager $1 | grep 'Active'
-    journalctl -u $1 -n30
+    journalctl -u $1 -n30 --no-pager
 }
 
 printService lumestrio.service
