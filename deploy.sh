@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
-###
-# this script is not yet tested
-PIADDR=$1
-LOCALD=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-echo $LOCALD
+### this sends lumestrio files to given pi@lumestrio1X
 
-scp -r view-dist ${PIADDR}:/home/pi/raspestrio/
-scp -r server/out ${PIADDR}:/home/pi/raspestrio/server/out
+syncPi() {
+    PIADDR=$1
+    LOCALD=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+    echo syncing $PIADDR on $LOCALD
 
-ssh $PIADDR LOCALD=$LOCALD 'bash -s' <<'ENDSSH'
+    ssh $PIADDR LOCALD=$LOCALD 'bash -s' <<'ENDSSH'
 sudo mount -o remount,rw /;
 cd raspestrio
-scp -r tinmarbook@tinmarbook.local:$LOCALD/view-dist .
-scp -r tinmarbook@tinmarbook.local:$LOCALD/server/out server/
+rsync -r -e ssh -avz --delete-after tinmarbook@tinmarbook.local:$LOCALD/view-dist/ view-dist/
+rsync -r -e ssh -avz --delete-after tinmarbook@tinmarbook.local:$LOCALD/server/out/ server/out/
 sudo mount -o remount,ro /;
 sudo systemctl restart lumestrio
 
 ENDSSH
+}
+
+for var in "$@"; do
+    ADDR="pi@lumestrio$var.local"
+    syncPi $ADDR
+done
