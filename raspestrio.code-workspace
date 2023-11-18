@@ -21,11 +21,17 @@
         },
         {
             "path": "androidjs"
+        },
+        {
+            "path": "../lora"
         }
     ],
     "settings": {
         "files.associations": {
-            "regex": "cpp"
+            "*.ejs": "html",
+            "regex": "cpp",
+            "array": "cpp",
+            "vector": "cpp"
         },
         "volar.format.initialIndent": {
             "html": false
