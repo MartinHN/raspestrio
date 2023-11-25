@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 set -e
-#pushd .
-#cd schedule
-#pnpm run build
-#popd
+
+cd schedule
+pnpm run build
+cd ..
 cd server
 pnpm run build
+cd ..
+
+# cd Vermuth
+# ./build.sh
+# cd ..

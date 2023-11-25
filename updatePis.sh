@@ -1,54 +1,29 @@
-#!/usr/bin/env bash
-serverAddr=http://lumestrio1.local:3003/knownDevices
+#done plataneA 192.168.1.13  platB 192.168.1.8  platC 192.168.1.11 L26 1.25
 
-function getAllKnown() {
-    echo $(curl $serverAddr --silent | jq -r " to_entries[] |  select(.key | startswith(\"lumestrio@\") )  | .value")
-}
+# git remote add momo olivierclausse@192.168.1.35:/Users/olivierclausse/Documents/GitHub/omxServer/.git;
+# git fetch momo;
+# git switch -c MomoMaster momo/master;
 
-function showKd() {
-    echo $(jq -r " {ip, deviceName} " <<<$1)
-}
-function getAllIpRegistered() {
-    echo $(jq -r .ip <<<$1)
-}
-
-function getNiceNameFromIp() {
-    ip=$(sed -e 's/"//g' <<<"$2")
-    echo $(jq -r " select(.ip==\"$ip\") | {ip, deviceName, niceName}" <<<$1)
-}
-
-function printNicenames() {
-    for a in $2; do
-        echo $(getNiceNameFromIp "$1" "$a")
-    done
-}
-
-kd="$(getAllKnown)"
-# echo "$(showKd "$kd")"
-ips=$(getAllIpRegistered "$kd")
+ips="lumestrio2"
 # echo "$(getNiceNameFromIp "$kd" 192.168.43.74)"
-echo "$(printNicenames "$kd" "$ips")"
+# echo "$(printNicenames "$kd" "$ips")"
 
 function updatePi() {
 
     ssh pi@$1 NEWNAME=$1 'bash -s' <<'ENDSSH'
 # source /home/pi/.bash_profile
 # whoami
-nvm use 16
-sudo systemctl stop lumestrio
+
+
+sudo systemctl stop lumestrio;
 sudo mount -o remount,rw /;
-cd raspestrio
-cd omxServer
-git checkout .
-cd ..
-cd server
-git checkout .
-cd ..
-cd schedule
-git checkout .
-cd ..
-git pull local
-./rpiUpdate.sh
+cd raspestrio;
+cd server;
+git pull 
+cd ..;
+
+sudo systemctl restart lumestrio;
+sudo systemctl restart omxserver;
 sudo mount -o remount,ro /;
 
 ENDSSH
@@ -56,6 +31,8 @@ ENDSSH
 }
 
 for i in $ips; do
-    echo "updating ${i} . $(getNiceNameFromIp $i)"
-    updatePi $i
+    echo "updating ${i} ."
+    updatePi $i.local
 done
+
+cd raspestrio/omxServer
