@@ -19,4 +19,4 @@
 
 [submodule "piLora"]
 	path = piLora
-	url = https://github.com/MartinHN/lora
+	url = https://github.com/MartinHN/piLora
